@@ -5,13 +5,51 @@ require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("rpc/block.proto", :syntax => :proto3) do
+    add_message "KotFlowBlock.VerifyRequest" do
+      optional :Height, :bytes, 1
+      optional :BlockHash, :bytes, 2
+      optional :Hash, :bytes, 3
+      optional :Time, :bytes, 4
+      optional :Nonce, :bytes, 5
+      optional :Miner, :bytes, 6
+    end
+    add_message "KotFlowBlock.TransactionRequest" do
+      optional :Value, :bytes, 1
+      optional :BaseFee, :bytes, 2
+      optional :To, :bytes, 3
+      optional :Random, :bytes, 4
+      optional :TxHash, :bytes, 5
+      optional :Time, :bytes, 6
+      optional :Nonce, :bytes, 7
+      optional :Sign, :bytes, 8
+    end
+    add_message "KotFlowBlock.HashRequest" do
+      optional :Hash, :bytes, 1
+    end
+    add_message "KotFlowBlock.AddressRequest" do
+      optional :Address, :bytes, 1
+    end
+    add_message "KotFlowBlock.ReplyBool" do
+      optional :Ok, :bool, 1
+    end
+    add_message "KotFlowBlock.ReplyValue" do
+      optional :In, :bytes, 1
+      optional :Out, :bytes, 2
+    end
+    add_message "KotFlowBlock.ReplyBalance" do
+      optional :Balance, :bytes, 1
+    end
     add_message "KotFlowBlock.HeightRequest" do
       optional :Height, :int64, 1
     end
-    add_message "KotFlowBlock.Block" do
+    add_message "KotFlowBlock.ReplyBlock" do
       optional :Height, :bytes, 1
       optional :Header, :message, 2, "KotFlowBlock.Header"
-      repeated :Transaction, :message, 3, "KotFlowBlock.Transaction"
+      repeated :Transaction, :message, 3, "KotFlowBlock.ReplyTransaction"
+    end
+    add_message "KotFlowBlock.ReplyLatest" do
+      optional :Height, :bytes, 1
+      optional :Hash, :bytes, 2
     end
     add_message "KotFlowBlock.Header" do
       optional :ParentHash, :bytes, 1
@@ -20,7 +58,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :Nonce, :bytes, 4
       optional :Miner, :bytes, 5
     end
-    add_message "KotFlowBlock.Transaction" do
+    add_message "KotFlowBlock.ReplyTransaction" do
       optional :Value, :bytes, 1
       optional :BaseFee, :bytes, 2
       optional :To, :bytes, 3
@@ -35,8 +73,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module KotFlowBlock
+  VerifyRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.VerifyRequest").msgclass
+  TransactionRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.TransactionRequest").msgclass
+  HashRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.HashRequest").msgclass
+  AddressRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.AddressRequest").msgclass
+  ReplyBool = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyBool").msgclass
+  ReplyValue = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyValue").msgclass
+  ReplyBalance = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyBalance").msgclass
   HeightRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.HeightRequest").msgclass
-  Block = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.Block").msgclass
+  ReplyBlock = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyBlock").msgclass
+  ReplyLatest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyLatest").msgclass
   Header = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.Header").msgclass
-  Transaction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.Transaction").msgclass
+  ReplyTransaction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyTransaction").msgclass
 end

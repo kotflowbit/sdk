@@ -25,7 +25,7 @@
 // static values in struct initializers.
 // We don't use [Foo class] because it is not a static value.
 GPBObjCClassDeclaration(Header);
-GPBObjCClassDeclaration(Transaction);
+GPBObjCClassDeclaration(ReplyTransaction);
 
 #pragma mark - BlockRoot
 
@@ -49,6 +49,498 @@ static GPBFileDescriptor *BlockRoot_FileDescriptor(void) {
   }
   return descriptor;
 }
+
+#pragma mark - VerifyRequest
+
+@implementation VerifyRequest
+
+@dynamic height;
+@dynamic blockHash;
+@dynamic hash_p;
+@dynamic time;
+@dynamic nonce;
+@dynamic miner;
+
+typedef struct VerifyRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *height;
+  NSData *blockHash;
+  NSData *hash_p;
+  NSData *time;
+  NSData *nonce;
+  NSData *miner;
+} VerifyRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "height",
+        .dataTypeSpecific.clazz = Nil,
+        .number = VerifyRequest_FieldNumber_Height,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(VerifyRequest__storage_, height),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "blockHash",
+        .dataTypeSpecific.clazz = Nil,
+        .number = VerifyRequest_FieldNumber_BlockHash,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(VerifyRequest__storage_, blockHash),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "hash_p",
+        .dataTypeSpecific.clazz = Nil,
+        .number = VerifyRequest_FieldNumber_Hash_p,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(VerifyRequest__storage_, hash_p),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "time",
+        .dataTypeSpecific.clazz = Nil,
+        .number = VerifyRequest_FieldNumber_Time,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(VerifyRequest__storage_, time),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "nonce",
+        .dataTypeSpecific.clazz = Nil,
+        .number = VerifyRequest_FieldNumber_Nonce,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(VerifyRequest__storage_, nonce),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "miner",
+        .dataTypeSpecific.clazz = Nil,
+        .number = VerifyRequest_FieldNumber_Miner,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(VerifyRequest__storage_, miner),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[VerifyRequest class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(VerifyRequest__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\006\001F\000\002I\000\003\000Hash\000\004D\000\005E\000\006E\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - TransactionRequest
+
+@implementation TransactionRequest
+
+@dynamic value;
+@dynamic baseFee;
+@dynamic to;
+@dynamic random;
+@dynamic txHash;
+@dynamic time;
+@dynamic nonce;
+@dynamic sign;
+
+typedef struct TransactionRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *value;
+  NSData *baseFee;
+  NSData *to;
+  NSData *random;
+  NSData *txHash;
+  NSData *time;
+  NSData *nonce;
+  NSData *sign;
+} TransactionRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "value",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_Value,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, value),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "baseFee",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_BaseFee,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, baseFee),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "to",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_To,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, to),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "random",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_Random,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, random),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "txHash",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_TxHash,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, txHash),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "time",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_Time,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, time),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "nonce",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_Nonce,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, nonce),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "sign",
+        .dataTypeSpecific.clazz = Nil,
+        .number = TransactionRequest_FieldNumber_Sign,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(TransactionRequest__storage_, sign),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[TransactionRequest class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(TransactionRequest__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\010\001E\000\002G\000\003B\000\004F\000\005F\000\006D\000\007E\000\010D\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - HashRequest
+
+@implementation HashRequest
+
+@dynamic hash_p;
+
+typedef struct HashRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *hash_p;
+} HashRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "hash_p",
+        .dataTypeSpecific.clazz = Nil,
+        .number = HashRequest_FieldNumber_Hash_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(HashRequest__storage_, hash_p),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[HashRequest class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(HashRequest__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\001\000Hash\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - AddressRequest
+
+@implementation AddressRequest
+
+@dynamic address;
+
+typedef struct AddressRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *address;
+} AddressRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "address",
+        .dataTypeSpecific.clazz = Nil,
+        .number = AddressRequest_FieldNumber_Address,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(AddressRequest__storage_, address),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[AddressRequest class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(AddressRequest__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\001G\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReplyBool
+
+@implementation ReplyBool
+
+@dynamic ok;
+
+typedef struct ReplyBool__storage_ {
+  uint32_t _has_storage_[1];
+} ReplyBool__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "ok",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyBool_FieldNumber_Ok,
+        .hasIndex = 0,
+        .offset = 1,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReplyBool class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReplyBool__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\001B\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReplyValue
+
+@implementation ReplyValue
+
+@dynamic in_p;
+@dynamic out_p;
+
+typedef struct ReplyValue__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *in_p;
+  NSData *out_p;
+} ReplyValue__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "in_p",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyValue_FieldNumber_In_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ReplyValue__storage_, in_p),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "out_p",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyValue_FieldNumber_Out_p,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ReplyValue__storage_, out_p),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReplyValue class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReplyValue__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\001\000In\000\002\000Out\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReplyBalance
+
+@implementation ReplyBalance
+
+@dynamic balance;
+
+typedef struct ReplyBalance__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *balance;
+} ReplyBalance__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "balance",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyBalance_FieldNumber_Balance,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ReplyBalance__storage_, balance),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReplyBalance class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReplyBalance__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\001G\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
 
 #pragma mark - HeightRequest
 
@@ -100,20 +592,20 @@ typedef struct HeightRequest__storage_ {
 
 @end
 
-#pragma mark - Block
+#pragma mark - ReplyBlock
 
-@implementation Block
+@implementation ReplyBlock
 
 @dynamic height;
 @dynamic hasHeader, header;
 @dynamic transactionArray, transactionArray_Count;
 
-typedef struct Block__storage_ {
+typedef struct ReplyBlock__storage_ {
   uint32_t _has_storage_[1];
   NSData *height;
   Header *header;
   NSMutableArray *transactionArray;
-} Block__storage_;
+} ReplyBlock__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -124,42 +616,103 @@ typedef struct Block__storage_ {
       {
         .name = "height",
         .dataTypeSpecific.clazz = Nil,
-        .number = Block_FieldNumber_Height,
+        .number = ReplyBlock_FieldNumber_Height,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Block__storage_, height),
+        .offset = (uint32_t)offsetof(ReplyBlock__storage_, height),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "header",
         .dataTypeSpecific.clazz = GPBObjCClass(Header),
-        .number = Block_FieldNumber_Header,
+        .number = ReplyBlock_FieldNumber_Header,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Block__storage_, header),
+        .offset = (uint32_t)offsetof(ReplyBlock__storage_, header),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "transactionArray",
-        .dataTypeSpecific.clazz = GPBObjCClass(Transaction),
-        .number = Block_FieldNumber_TransactionArray,
+        .dataTypeSpecific.clazz = GPBObjCClass(ReplyTransaction),
+        .number = ReplyBlock_FieldNumber_TransactionArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(Block__storage_, transactionArray),
+        .offset = (uint32_t)offsetof(ReplyBlock__storage_, transactionArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Block class]
+        [GPBDescriptor allocDescriptorForClass:[ReplyBlock class]
                                      rootClass:[BlockRoot class]
                                           file:BlockRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Block__storage_)
+                                   storageSize:sizeof(ReplyBlock__storage_)
                                          flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
         "\003\001F\000\002F\000\003\000Transaction\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReplyLatest
+
+@implementation ReplyLatest
+
+@dynamic height;
+@dynamic hash_p;
+
+typedef struct ReplyLatest__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *height;
+  NSData *hash_p;
+} ReplyLatest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "height",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyLatest_FieldNumber_Height,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ReplyLatest__storage_, height),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "hash_p",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyLatest_FieldNumber_Hash_p,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ReplyLatest__storage_, hash_p),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReplyLatest class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReplyLatest__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\001F\000\002\000Hash\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     #if defined(DEBUG) && DEBUG
@@ -266,9 +819,9 @@ typedef struct Header__storage_ {
 
 @end
 
-#pragma mark - Transaction
+#pragma mark - ReplyTransaction
 
-@implementation Transaction
+@implementation ReplyTransaction
 
 @dynamic value;
 @dynamic baseFee;
@@ -280,7 +833,7 @@ typedef struct Header__storage_ {
 @dynamic sign;
 @dynamic state;
 
-typedef struct Transaction__storage_ {
+typedef struct ReplyTransaction__storage_ {
   uint32_t _has_storage_[1];
   NSData *value;
   NSData *baseFee;
@@ -290,7 +843,7 @@ typedef struct Transaction__storage_ {
   NSData *time;
   NSData *nonce;
   NSData *sign;
-} Transaction__storage_;
+} ReplyTransaction__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -301,79 +854,79 @@ typedef struct Transaction__storage_ {
       {
         .name = "value",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_Value,
+        .number = ReplyTransaction_FieldNumber_Value,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Transaction__storage_, value),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, value),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "baseFee",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_BaseFee,
+        .number = ReplyTransaction_FieldNumber_BaseFee,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Transaction__storage_, baseFee),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, baseFee),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "to",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_To,
+        .number = ReplyTransaction_FieldNumber_To,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Transaction__storage_, to),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, to),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "random",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_Random,
+        .number = ReplyTransaction_FieldNumber_Random,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Transaction__storage_, random),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, random),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "txHash",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_TxHash,
+        .number = ReplyTransaction_FieldNumber_TxHash,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Transaction__storage_, txHash),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, txHash),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "time",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_Time,
+        .number = ReplyTransaction_FieldNumber_Time,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(Transaction__storage_, time),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, time),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "nonce",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_Nonce,
+        .number = ReplyTransaction_FieldNumber_Nonce,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(Transaction__storage_, nonce),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, nonce),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "sign",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_Sign,
+        .number = ReplyTransaction_FieldNumber_Sign,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(Transaction__storage_, sign),
+        .offset = (uint32_t)offsetof(ReplyTransaction__storage_, sign),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "state",
         .dataTypeSpecific.clazz = Nil,
-        .number = Transaction_FieldNumber_State,
+        .number = ReplyTransaction_FieldNumber_State,
         .hasIndex = 8,
         .offset = 9,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
@@ -381,12 +934,12 @@ typedef struct Transaction__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Transaction class]
+        [GPBDescriptor allocDescriptorForClass:[ReplyTransaction class]
                                      rootClass:[BlockRoot class]
                                           file:BlockRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Transaction__storage_)
+                                   storageSize:sizeof(ReplyTransaction__storage_)
                                          flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
