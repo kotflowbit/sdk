@@ -26,6 +26,7 @@
 // We don't use [Foo class] because it is not a static value.
 GPBObjCClassDeclaration(Header);
 GPBObjCClassDeclaration(ReplyTransaction);
+GPBObjCClassDeclaration(ReplyVerify);
 
 #pragma mark - BlockRoot
 
@@ -944,6 +945,161 @@ typedef struct ReplyTransaction__storage_ {
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
         "\t\001E\000\002G\000\003B\000\004F\000\005F\000\006D\000\007E\000\010D\000\tE\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReplyVerifys
+
+@implementation ReplyVerifys
+
+@dynamic verifysArray, verifysArray_Count;
+
+typedef struct ReplyVerifys__storage_ {
+  uint32_t _has_storage_[1];
+  NSMutableArray *verifysArray;
+} ReplyVerifys__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "verifysArray",
+        .dataTypeSpecific.clazz = GPBObjCClass(ReplyVerify),
+        .number = ReplyVerifys_FieldNumber_VerifysArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(ReplyVerifys__storage_, verifysArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReplyVerifys class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReplyVerifys__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\001\000Verifys\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReplyVerify
+
+@implementation ReplyVerify
+
+@dynamic height;
+@dynamic blockHash;
+@dynamic hash_p;
+@dynamic time;
+@dynamic nonce;
+@dynamic miner;
+
+typedef struct ReplyVerify__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *height;
+  NSData *blockHash;
+  NSData *hash_p;
+  NSData *time;
+  NSData *nonce;
+  NSData *miner;
+} ReplyVerify__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "height",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyVerify_FieldNumber_Height,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ReplyVerify__storage_, height),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "blockHash",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyVerify_FieldNumber_BlockHash,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ReplyVerify__storage_, blockHash),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "hash_p",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyVerify_FieldNumber_Hash_p,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ReplyVerify__storage_, hash_p),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "time",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyVerify_FieldNumber_Time,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ReplyVerify__storage_, time),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "nonce",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyVerify_FieldNumber_Nonce,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(ReplyVerify__storage_, nonce),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "miner",
+        .dataTypeSpecific.clazz = Nil,
+        .number = ReplyVerify_FieldNumber_Miner,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(ReplyVerify__storage_, miner),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReplyVerify class]
+                                     rootClass:[BlockRoot class]
+                                          file:BlockRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReplyVerify__storage_)
+                                         flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\006\001F\000\002I\000\003\000Hash\000\004D\000\005E\000\006E\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     #if defined(DEBUG) && DEBUG

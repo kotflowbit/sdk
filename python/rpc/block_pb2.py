@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0frpc/block.proto\x12\x0cKotFlowBlock\"l\n\rVerifyRequest\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12\x11\n\tBlockHash\x18\x02 \x01(\x0c\x12\x0c\n\x04Hash\x18\x03 \x01(\x0c\x12\x0c\n\x04Time\x18\x04 \x01(\x0c\x12\r\n\x05Nonce\x18\x05 \x01(\x0c\x12\r\n\x05Miner\x18\x06 \x01(\x0c\"\x8b\x01\n\x12TransactionRequest\x12\r\n\x05Value\x18\x01 \x01(\x0c\x12\x0f\n\x07\x42\x61seFee\x18\x02 \x01(\x0c\x12\n\n\x02To\x18\x03 \x01(\x0c\x12\x0e\n\x06Random\x18\x04 \x01(\x0c\x12\x0e\n\x06TxHash\x18\x05 \x01(\x0c\x12\x0c\n\x04Time\x18\x06 \x01(\x0c\x12\r\n\x05Nonce\x18\x07 \x01(\x0c\x12\x0c\n\x04Sign\x18\x08 \x01(\x0c\"\x1b\n\x0bHashRequest\x12\x0c\n\x04Hash\x18\x01 \x01(\x0c\"!\n\x0e\x41\x64\x64ressRequest\x12\x0f\n\x07\x41\x64\x64ress\x18\x01 \x01(\x0c\"\x17\n\tReplyBool\x12\n\n\x02Ok\x18\x01 \x01(\x08\"%\n\nReplyValue\x12\n\n\x02In\x18\x01 \x01(\x0c\x12\x0b\n\x03Out\x18\x02 \x01(\x0c\"\x1f\n\x0cReplyBalance\x12\x0f\n\x07\x42\x61lance\x18\x01 \x01(\x0c\"\x1f\n\rHeightRequest\x12\x0e\n\x06Height\x18\x01 \x01(\x03\"w\n\nReplyBlock\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12$\n\x06Header\x18\x02 \x01(\x0b\x32\x14.KotFlowBlock.Header\x12\x33\n\x0bTransaction\x18\x03 \x03(\x0b\x32\x1e.KotFlowBlock.ReplyTransaction\"+\n\x0bReplyLatest\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12\x0c\n\x04Hash\x18\x02 \x01(\x0c\"V\n\x06Header\x12\x12\n\nParentHash\x18\x01 \x01(\x0c\x12\x0c\n\x04Hash\x18\x02 \x01(\x0c\x12\x0c\n\x04Time\x18\x03 \x01(\x0c\x12\r\n\x05Nonce\x18\x04 \x01(\x0c\x12\r\n\x05Miner\x18\x05 \x01(\x0c\"\x98\x01\n\x10ReplyTransaction\x12\r\n\x05Value\x18\x01 \x01(\x0c\x12\x0f\n\x07\x42\x61seFee\x18\x02 \x01(\x0c\x12\n\n\x02To\x18\x03 \x01(\x0c\x12\x0e\n\x06Random\x18\x04 \x01(\x0c\x12\x0e\n\x06TxHash\x18\x05 \x01(\x0c\x12\x0c\n\x04Time\x18\x06 \x01(\x0c\x12\r\n\x05Nonce\x18\x07 \x01(\x0c\x12\x0c\n\x04Sign\x18\x08 \x01(\x0c\x12\r\n\x05State\x18\t \x01(\x08\x32\xcf\x04\n\x07Greeter\x12\x46\n\x0b\x42lockHeight\x12\x1b.KotFlowBlock.HeightRequest\x1a\x18.KotFlowBlock.ReplyBlock\"\x00\x12\x42\n\x06Latest\x12\x1b.KotFlowBlock.HeightRequest\x1a\x19.KotFlowBlock.ReplyLatest\"\x00\x12\x43\n\x0b\x43heckBroken\x12\x19.KotFlowBlock.HashRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x12H\n\x0c\x41\x64\x64ressValue\x12\x1c.KotFlowBlock.AddressRequest\x1a\x18.KotFlowBlock.ReplyValue\"\x00\x12L\n\x0e\x41\x64\x64ressBalance\x12\x1c.KotFlowBlock.AddressRequest\x1a\x1a.KotFlowBlock.ReplyBalance\"\x00\x12M\n\x0eGetTransaction\x12\x19.KotFlowBlock.HashRequest\x1a\x1e.KotFlowBlock.ReplyTransaction\"\x00\x12@\n\x06Verify\x12\x1b.KotFlowBlock.VerifyRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x12J\n\x0bTransaction\x12 .KotFlowBlock.TransactionRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x42\x0cZ\ngolang/kotb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0frpc/block.proto\x12\x0cKotFlowBlock\"l\n\rVerifyRequest\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12\x11\n\tBlockHash\x18\x02 \x01(\x0c\x12\x0c\n\x04Hash\x18\x03 \x01(\x0c\x12\x0c\n\x04Time\x18\x04 \x01(\x0c\x12\r\n\x05Nonce\x18\x05 \x01(\x0c\x12\r\n\x05Miner\x18\x06 \x01(\x0c\"\x8b\x01\n\x12TransactionRequest\x12\r\n\x05Value\x18\x01 \x01(\x0c\x12\x0f\n\x07\x42\x61seFee\x18\x02 \x01(\x0c\x12\n\n\x02To\x18\x03 \x01(\x0c\x12\x0e\n\x06Random\x18\x04 \x01(\x0c\x12\x0e\n\x06TxHash\x18\x05 \x01(\x0c\x12\x0c\n\x04Time\x18\x06 \x01(\x0c\x12\r\n\x05Nonce\x18\x07 \x01(\x0c\x12\x0c\n\x04Sign\x18\x08 \x01(\x0c\"\x1b\n\x0bHashRequest\x12\x0c\n\x04Hash\x18\x01 \x01(\x0c\"!\n\x0e\x41\x64\x64ressRequest\x12\x0f\n\x07\x41\x64\x64ress\x18\x01 \x01(\x0c\"\x17\n\tReplyBool\x12\n\n\x02Ok\x18\x01 \x01(\x08\"%\n\nReplyValue\x12\n\n\x02In\x18\x01 \x01(\x0c\x12\x0b\n\x03Out\x18\x02 \x01(\x0c\"\x1f\n\x0cReplyBalance\x12\x0f\n\x07\x42\x61lance\x18\x01 \x01(\x0c\"\x1f\n\rHeightRequest\x12\x0e\n\x06Height\x18\x01 \x01(\x03\"w\n\nReplyBlock\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12$\n\x06Header\x18\x02 \x01(\x0b\x32\x14.KotFlowBlock.Header\x12\x33\n\x0bTransaction\x18\x03 \x03(\x0b\x32\x1e.KotFlowBlock.ReplyTransaction\"+\n\x0bReplyLatest\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12\x0c\n\x04Hash\x18\x02 \x01(\x0c\"V\n\x06Header\x12\x12\n\nParentHash\x18\x01 \x01(\x0c\x12\x0c\n\x04Hash\x18\x02 \x01(\x0c\x12\x0c\n\x04Time\x18\x03 \x01(\x0c\x12\r\n\x05Nonce\x18\x04 \x01(\x0c\x12\r\n\x05Miner\x18\x05 \x01(\x0c\"\x98\x01\n\x10ReplyTransaction\x12\r\n\x05Value\x18\x01 \x01(\x0c\x12\x0f\n\x07\x42\x61seFee\x18\x02 \x01(\x0c\x12\n\n\x02To\x18\x03 \x01(\x0c\x12\x0e\n\x06Random\x18\x04 \x01(\x0c\x12\x0e\n\x06TxHash\x18\x05 \x01(\x0c\x12\x0c\n\x04Time\x18\x06 \x01(\x0c\x12\r\n\x05Nonce\x18\x07 \x01(\x0c\x12\x0c\n\x04Sign\x18\x08 \x01(\x0c\x12\r\n\x05State\x18\t \x01(\x08\":\n\x0cReplyVerifys\x12*\n\x07Verifys\x18\x01 \x03(\x0b\x32\x19.KotFlowBlock.ReplyVerify\"j\n\x0bReplyVerify\x12\x0e\n\x06Height\x18\x01 \x01(\x0c\x12\x11\n\tBlockHash\x18\x02 \x01(\x0c\x12\x0c\n\x04Hash\x18\x03 \x01(\x0c\x12\x0c\n\x04Time\x18\x04 \x01(\x0c\x12\r\n\x05Nonce\x18\x05 \x01(\x0c\x12\r\n\x05Miner\x18\x06 \x01(\x0c\x32\xf5\x05\n\x07Greeter\x12I\n\x0eGetBlockHeight\x12\x1b.KotFlowBlock.HeightRequest\x1a\x18.KotFlowBlock.ReplyBlock\"\x00\x12\x45\n\tGetLatest\x12\x1b.KotFlowBlock.HeightRequest\x1a\x19.KotFlowBlock.ReplyLatest\"\x00\x12\x41\n\tGetBroken\x12\x19.KotFlowBlock.HashRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x12K\n\x0fGetAddressValue\x12\x1c.KotFlowBlock.AddressRequest\x1a\x18.KotFlowBlock.ReplyValue\"\x00\x12O\n\x11GetAddressBalance\x12\x1c.KotFlowBlock.AddressRequest\x1a\x1a.KotFlowBlock.ReplyBalance\"\x00\x12M\n\x0eGetTransaction\x12\x19.KotFlowBlock.HashRequest\x1a\x1e.KotFlowBlock.ReplyTransaction\"\x00\x12\x43\n\tPutVerify\x12\x1b.KotFlowBlock.VerifyRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x12M\n\x0ePutTransaction\x12 .KotFlowBlock.TransactionRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x12L\n\x0fGetVerifyHeight\x12\x1b.KotFlowBlock.HeightRequest\x1a\x1a.KotFlowBlock.ReplyVerifys\"\x00\x12\x46\n\x0eHasTransaction\x12\x19.KotFlowBlock.HashRequest\x1a\x17.KotFlowBlock.ReplyBool\"\x00\x42\x0cZ\ngolang/kotb\x06proto3')
 
 
 
@@ -30,6 +30,8 @@ _REPLYBLOCK = DESCRIPTOR.message_types_by_name['ReplyBlock']
 _REPLYLATEST = DESCRIPTOR.message_types_by_name['ReplyLatest']
 _HEADER = DESCRIPTOR.message_types_by_name['Header']
 _REPLYTRANSACTION = DESCRIPTOR.message_types_by_name['ReplyTransaction']
+_REPLYVERIFYS = DESCRIPTOR.message_types_by_name['ReplyVerifys']
+_REPLYVERIFY = DESCRIPTOR.message_types_by_name['ReplyVerify']
 VerifyRequest = _reflection.GeneratedProtocolMessageType('VerifyRequest', (_message.Message,), {
   'DESCRIPTOR' : _VERIFYREQUEST,
   '__module__' : 'rpc.block_pb2'
@@ -114,6 +116,20 @@ ReplyTransaction = _reflection.GeneratedProtocolMessageType('ReplyTransaction', 
   })
 _sym_db.RegisterMessage(ReplyTransaction)
 
+ReplyVerifys = _reflection.GeneratedProtocolMessageType('ReplyVerifys', (_message.Message,), {
+  'DESCRIPTOR' : _REPLYVERIFYS,
+  '__module__' : 'rpc.block_pb2'
+  # @@protoc_insertion_point(class_scope:KotFlowBlock.ReplyVerifys)
+  })
+_sym_db.RegisterMessage(ReplyVerifys)
+
+ReplyVerify = _reflection.GeneratedProtocolMessageType('ReplyVerify', (_message.Message,), {
+  'DESCRIPTOR' : _REPLYVERIFY,
+  '__module__' : 'rpc.block_pb2'
+  # @@protoc_insertion_point(class_scope:KotFlowBlock.ReplyVerify)
+  })
+_sym_db.RegisterMessage(ReplyVerify)
+
 _GREETER = DESCRIPTOR.services_by_name['Greeter']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -143,6 +159,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _HEADER._serialized_end=731
   _REPLYTRANSACTION._serialized_start=734
   _REPLYTRANSACTION._serialized_end=886
-  _GREETER._serialized_start=889
-  _GREETER._serialized_end=1480
+  _REPLYVERIFYS._serialized_start=888
+  _REPLYVERIFYS._serialized_end=946
+  _REPLYVERIFY._serialized_start=948
+  _REPLYVERIFY._serialized_end=1054
+  _GREETER._serialized_start=1057
+  _GREETER._serialized_end=1814
 # @@protoc_insertion_point(module_scope)

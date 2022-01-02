@@ -46,7 +46,7 @@ struct TableStruct_rpc_2fblock_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -84,6 +84,12 @@ extern ReplyTransactionDefaultTypeInternal _ReplyTransaction_default_instance_;
 class ReplyValue;
 struct ReplyValueDefaultTypeInternal;
 extern ReplyValueDefaultTypeInternal _ReplyValue_default_instance_;
+class ReplyVerify;
+struct ReplyVerifyDefaultTypeInternal;
+extern ReplyVerifyDefaultTypeInternal _ReplyVerify_default_instance_;
+class ReplyVerifys;
+struct ReplyVerifysDefaultTypeInternal;
+extern ReplyVerifysDefaultTypeInternal _ReplyVerifys_default_instance_;
 class TransactionRequest;
 struct TransactionRequestDefaultTypeInternal;
 extern TransactionRequestDefaultTypeInternal _TransactionRequest_default_instance_;
@@ -102,6 +108,8 @@ template<> ::KotFlowBlock::ReplyBool* Arena::CreateMaybeMessage<::KotFlowBlock::
 template<> ::KotFlowBlock::ReplyLatest* Arena::CreateMaybeMessage<::KotFlowBlock::ReplyLatest>(Arena*);
 template<> ::KotFlowBlock::ReplyTransaction* Arena::CreateMaybeMessage<::KotFlowBlock::ReplyTransaction>(Arena*);
 template<> ::KotFlowBlock::ReplyValue* Arena::CreateMaybeMessage<::KotFlowBlock::ReplyValue>(Arena*);
+template<> ::KotFlowBlock::ReplyVerify* Arena::CreateMaybeMessage<::KotFlowBlock::ReplyVerify>(Arena*);
+template<> ::KotFlowBlock::ReplyVerifys* Arena::CreateMaybeMessage<::KotFlowBlock::ReplyVerifys>(Arena*);
 template<> ::KotFlowBlock::TransactionRequest* Arena::CreateMaybeMessage<::KotFlowBlock::TransactionRequest>(Arena*);
 template<> ::KotFlowBlock::VerifyRequest* Arena::CreateMaybeMessage<::KotFlowBlock::VerifyRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -2360,6 +2368,392 @@ class ReplyTransaction final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_rpc_2fblock_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ReplyVerifys final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:KotFlowBlock.ReplyVerifys) */ {
+ public:
+  inline ReplyVerifys() : ReplyVerifys(nullptr) {}
+  ~ReplyVerifys() override;
+  explicit constexpr ReplyVerifys(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ReplyVerifys(const ReplyVerifys& from);
+  ReplyVerifys(ReplyVerifys&& from) noexcept
+    : ReplyVerifys() {
+    *this = ::std::move(from);
+  }
+
+  inline ReplyVerifys& operator=(const ReplyVerifys& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReplyVerifys& operator=(ReplyVerifys&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ReplyVerifys& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ReplyVerifys* internal_default_instance() {
+    return reinterpret_cast<const ReplyVerifys*>(
+               &_ReplyVerifys_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(ReplyVerifys& a, ReplyVerifys& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReplyVerifys* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ReplyVerifys* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ReplyVerifys* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ReplyVerifys>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ReplyVerifys& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ReplyVerifys& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReplyVerifys* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "KotFlowBlock.ReplyVerifys";
+  }
+  protected:
+  explicit ReplyVerifys(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVerifysFieldNumber = 1,
+  };
+  // repeated .KotFlowBlock.ReplyVerify Verifys = 1;
+  int verifys_size() const;
+  private:
+  int _internal_verifys_size() const;
+  public:
+  void clear_verifys();
+  ::KotFlowBlock::ReplyVerify* mutable_verifys(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KotFlowBlock::ReplyVerify >*
+      mutable_verifys();
+  private:
+  const ::KotFlowBlock::ReplyVerify& _internal_verifys(int index) const;
+  ::KotFlowBlock::ReplyVerify* _internal_add_verifys();
+  public:
+  const ::KotFlowBlock::ReplyVerify& verifys(int index) const;
+  ::KotFlowBlock::ReplyVerify* add_verifys();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KotFlowBlock::ReplyVerify >&
+      verifys() const;
+
+  // @@protoc_insertion_point(class_scope:KotFlowBlock.ReplyVerifys)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KotFlowBlock::ReplyVerify > verifys_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_rpc_2fblock_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReplyVerify final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:KotFlowBlock.ReplyVerify) */ {
+ public:
+  inline ReplyVerify() : ReplyVerify(nullptr) {}
+  ~ReplyVerify() override;
+  explicit constexpr ReplyVerify(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ReplyVerify(const ReplyVerify& from);
+  ReplyVerify(ReplyVerify&& from) noexcept
+    : ReplyVerify() {
+    *this = ::std::move(from);
+  }
+
+  inline ReplyVerify& operator=(const ReplyVerify& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReplyVerify& operator=(ReplyVerify&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ReplyVerify& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ReplyVerify* internal_default_instance() {
+    return reinterpret_cast<const ReplyVerify*>(
+               &_ReplyVerify_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(ReplyVerify& a, ReplyVerify& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReplyVerify* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ReplyVerify* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ReplyVerify* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ReplyVerify>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ReplyVerify& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ReplyVerify& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReplyVerify* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "KotFlowBlock.ReplyVerify";
+  }
+  protected:
+  explicit ReplyVerify(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHeightFieldNumber = 1,
+    kBlockHashFieldNumber = 2,
+    kHashFieldNumber = 3,
+    kTimeFieldNumber = 4,
+    kNonceFieldNumber = 5,
+    kMinerFieldNumber = 6,
+  };
+  // bytes Height = 1;
+  void clear_height();
+  const std::string& height() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_height(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_height();
+  PROTOBUF_NODISCARD std::string* release_height();
+  void set_allocated_height(std::string* height);
+  private:
+  const std::string& _internal_height() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_height(const std::string& value);
+  std::string* _internal_mutable_height();
+  public:
+
+  // bytes BlockHash = 2;
+  void clear_blockhash();
+  const std::string& blockhash() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_blockhash(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockhash();
+  PROTOBUF_NODISCARD std::string* release_blockhash();
+  void set_allocated_blockhash(std::string* blockhash);
+  private:
+  const std::string& _internal_blockhash() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockhash(const std::string& value);
+  std::string* _internal_mutable_blockhash();
+  public:
+
+  // bytes Hash = 3;
+  void clear_hash();
+  const std::string& hash() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_hash(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_hash();
+  PROTOBUF_NODISCARD std::string* release_hash();
+  void set_allocated_hash(std::string* hash);
+  private:
+  const std::string& _internal_hash() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hash(const std::string& value);
+  std::string* _internal_mutable_hash();
+  public:
+
+  // bytes Time = 4;
+  void clear_time();
+  const std::string& time() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_time(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_time();
+  PROTOBUF_NODISCARD std::string* release_time();
+  void set_allocated_time(std::string* time);
+  private:
+  const std::string& _internal_time() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_time(const std::string& value);
+  std::string* _internal_mutable_time();
+  public:
+
+  // bytes Nonce = 5;
+  void clear_nonce();
+  const std::string& nonce() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nonce(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nonce();
+  PROTOBUF_NODISCARD std::string* release_nonce();
+  void set_allocated_nonce(std::string* nonce);
+  private:
+  const std::string& _internal_nonce() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nonce(const std::string& value);
+  std::string* _internal_mutable_nonce();
+  public:
+
+  // bytes Miner = 6;
+  void clear_miner();
+  const std::string& miner() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_miner(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_miner();
+  PROTOBUF_NODISCARD std::string* release_miner();
+  void set_allocated_miner(std::string* miner);
+  private:
+  const std::string& _internal_miner() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_miner(const std::string& value);
+  std::string* _internal_mutable_miner();
+  public:
+
+  // @@protoc_insertion_point(class_scope:KotFlowBlock.ReplyVerify)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr height_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockhash_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr time_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nonce_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr miner_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_rpc_2fblock_2eproto;
+};
 // ===================================================================
 
 
@@ -4390,9 +4784,367 @@ inline void ReplyTransaction::set_state(bool value) {
   // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyTransaction.State)
 }
 
+// -------------------------------------------------------------------
+
+// ReplyVerifys
+
+// repeated .KotFlowBlock.ReplyVerify Verifys = 1;
+inline int ReplyVerifys::_internal_verifys_size() const {
+  return verifys_.size();
+}
+inline int ReplyVerifys::verifys_size() const {
+  return _internal_verifys_size();
+}
+inline void ReplyVerifys::clear_verifys() {
+  verifys_.Clear();
+}
+inline ::KotFlowBlock::ReplyVerify* ReplyVerifys::mutable_verifys(int index) {
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerifys.Verifys)
+  return verifys_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KotFlowBlock::ReplyVerify >*
+ReplyVerifys::mutable_verifys() {
+  // @@protoc_insertion_point(field_mutable_list:KotFlowBlock.ReplyVerifys.Verifys)
+  return &verifys_;
+}
+inline const ::KotFlowBlock::ReplyVerify& ReplyVerifys::_internal_verifys(int index) const {
+  return verifys_.Get(index);
+}
+inline const ::KotFlowBlock::ReplyVerify& ReplyVerifys::verifys(int index) const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerifys.Verifys)
+  return _internal_verifys(index);
+}
+inline ::KotFlowBlock::ReplyVerify* ReplyVerifys::_internal_add_verifys() {
+  return verifys_.Add();
+}
+inline ::KotFlowBlock::ReplyVerify* ReplyVerifys::add_verifys() {
+  ::KotFlowBlock::ReplyVerify* _add = _internal_add_verifys();
+  // @@protoc_insertion_point(field_add:KotFlowBlock.ReplyVerifys.Verifys)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KotFlowBlock::ReplyVerify >&
+ReplyVerifys::verifys() const {
+  // @@protoc_insertion_point(field_list:KotFlowBlock.ReplyVerifys.Verifys)
+  return verifys_;
+}
+
+// -------------------------------------------------------------------
+
+// ReplyVerify
+
+// bytes Height = 1;
+inline void ReplyVerify::clear_height() {
+  height_.ClearToEmpty();
+}
+inline const std::string& ReplyVerify::height() const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerify.Height)
+  return _internal_height();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReplyVerify::set_height(ArgT0&& arg0, ArgT... args) {
+ 
+ height_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyVerify.Height)
+}
+inline std::string* ReplyVerify::mutable_height() {
+  std::string* _s = _internal_mutable_height();
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerify.Height)
+  return _s;
+}
+inline const std::string& ReplyVerify::_internal_height() const {
+  return height_.Get();
+}
+inline void ReplyVerify::_internal_set_height(const std::string& value) {
+  
+  height_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::_internal_mutable_height() {
+  
+  return height_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::release_height() {
+  // @@protoc_insertion_point(field_release:KotFlowBlock.ReplyVerify.Height)
+  return height_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReplyVerify::set_allocated_height(std::string* height) {
+  if (height != nullptr) {
+    
+  } else {
+    
+  }
+  height_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), height,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (height_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    height_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:KotFlowBlock.ReplyVerify.Height)
+}
+
+// bytes BlockHash = 2;
+inline void ReplyVerify::clear_blockhash() {
+  blockhash_.ClearToEmpty();
+}
+inline const std::string& ReplyVerify::blockhash() const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerify.BlockHash)
+  return _internal_blockhash();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReplyVerify::set_blockhash(ArgT0&& arg0, ArgT... args) {
+ 
+ blockhash_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyVerify.BlockHash)
+}
+inline std::string* ReplyVerify::mutable_blockhash() {
+  std::string* _s = _internal_mutable_blockhash();
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerify.BlockHash)
+  return _s;
+}
+inline const std::string& ReplyVerify::_internal_blockhash() const {
+  return blockhash_.Get();
+}
+inline void ReplyVerify::_internal_set_blockhash(const std::string& value) {
+  
+  blockhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::_internal_mutable_blockhash() {
+  
+  return blockhash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::release_blockhash() {
+  // @@protoc_insertion_point(field_release:KotFlowBlock.ReplyVerify.BlockHash)
+  return blockhash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReplyVerify::set_allocated_blockhash(std::string* blockhash) {
+  if (blockhash != nullptr) {
+    
+  } else {
+    
+  }
+  blockhash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockhash,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (blockhash_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    blockhash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:KotFlowBlock.ReplyVerify.BlockHash)
+}
+
+// bytes Hash = 3;
+inline void ReplyVerify::clear_hash() {
+  hash_.ClearToEmpty();
+}
+inline const std::string& ReplyVerify::hash() const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerify.Hash)
+  return _internal_hash();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReplyVerify::set_hash(ArgT0&& arg0, ArgT... args) {
+ 
+ hash_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyVerify.Hash)
+}
+inline std::string* ReplyVerify::mutable_hash() {
+  std::string* _s = _internal_mutable_hash();
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerify.Hash)
+  return _s;
+}
+inline const std::string& ReplyVerify::_internal_hash() const {
+  return hash_.Get();
+}
+inline void ReplyVerify::_internal_set_hash(const std::string& value) {
+  
+  hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::_internal_mutable_hash() {
+  
+  return hash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::release_hash() {
+  // @@protoc_insertion_point(field_release:KotFlowBlock.ReplyVerify.Hash)
+  return hash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReplyVerify::set_allocated_hash(std::string* hash) {
+  if (hash != nullptr) {
+    
+  } else {
+    
+  }
+  hash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hash,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (hash_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:KotFlowBlock.ReplyVerify.Hash)
+}
+
+// bytes Time = 4;
+inline void ReplyVerify::clear_time() {
+  time_.ClearToEmpty();
+}
+inline const std::string& ReplyVerify::time() const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerify.Time)
+  return _internal_time();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReplyVerify::set_time(ArgT0&& arg0, ArgT... args) {
+ 
+ time_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyVerify.Time)
+}
+inline std::string* ReplyVerify::mutable_time() {
+  std::string* _s = _internal_mutable_time();
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerify.Time)
+  return _s;
+}
+inline const std::string& ReplyVerify::_internal_time() const {
+  return time_.Get();
+}
+inline void ReplyVerify::_internal_set_time(const std::string& value) {
+  
+  time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::_internal_mutable_time() {
+  
+  return time_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::release_time() {
+  // @@protoc_insertion_point(field_release:KotFlowBlock.ReplyVerify.Time)
+  return time_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReplyVerify::set_allocated_time(std::string* time) {
+  if (time != nullptr) {
+    
+  } else {
+    
+  }
+  time_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), time,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (time_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:KotFlowBlock.ReplyVerify.Time)
+}
+
+// bytes Nonce = 5;
+inline void ReplyVerify::clear_nonce() {
+  nonce_.ClearToEmpty();
+}
+inline const std::string& ReplyVerify::nonce() const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerify.Nonce)
+  return _internal_nonce();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReplyVerify::set_nonce(ArgT0&& arg0, ArgT... args) {
+ 
+ nonce_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyVerify.Nonce)
+}
+inline std::string* ReplyVerify::mutable_nonce() {
+  std::string* _s = _internal_mutable_nonce();
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerify.Nonce)
+  return _s;
+}
+inline const std::string& ReplyVerify::_internal_nonce() const {
+  return nonce_.Get();
+}
+inline void ReplyVerify::_internal_set_nonce(const std::string& value) {
+  
+  nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::_internal_mutable_nonce() {
+  
+  return nonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::release_nonce() {
+  // @@protoc_insertion_point(field_release:KotFlowBlock.ReplyVerify.Nonce)
+  return nonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReplyVerify::set_allocated_nonce(std::string* nonce) {
+  if (nonce != nullptr) {
+    
+  } else {
+    
+  }
+  nonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), nonce,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (nonce_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    nonce_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:KotFlowBlock.ReplyVerify.Nonce)
+}
+
+// bytes Miner = 6;
+inline void ReplyVerify::clear_miner() {
+  miner_.ClearToEmpty();
+}
+inline const std::string& ReplyVerify::miner() const {
+  // @@protoc_insertion_point(field_get:KotFlowBlock.ReplyVerify.Miner)
+  return _internal_miner();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReplyVerify::set_miner(ArgT0&& arg0, ArgT... args) {
+ 
+ miner_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:KotFlowBlock.ReplyVerify.Miner)
+}
+inline std::string* ReplyVerify::mutable_miner() {
+  std::string* _s = _internal_mutable_miner();
+  // @@protoc_insertion_point(field_mutable:KotFlowBlock.ReplyVerify.Miner)
+  return _s;
+}
+inline const std::string& ReplyVerify::_internal_miner() const {
+  return miner_.Get();
+}
+inline void ReplyVerify::_internal_set_miner(const std::string& value) {
+  
+  miner_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::_internal_mutable_miner() {
+  
+  return miner_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReplyVerify::release_miner() {
+  // @@protoc_insertion_point(field_release:KotFlowBlock.ReplyVerify.Miner)
+  return miner_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReplyVerify::set_allocated_miner(std::string* miner) {
+  if (miner != nullptr) {
+    
+  } else {
+    
+  }
+  miner_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), miner,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (miner_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    miner_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:KotFlowBlock.ReplyVerify.Miner)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

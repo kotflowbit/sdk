@@ -29,6 +29,7 @@ CF_EXTERN_C_BEGIN
 
 @class Header;
 @class ReplyTransaction;
+@class ReplyVerify;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -276,6 +277,47 @@ GPB_FINAL @interface ReplyTransaction : GPBMessage
 @property(nonatomic, readwrite, copy, null_resettable) NSData *sign;
 
 @property(nonatomic, readwrite) BOOL state;
+
+@end
+
+#pragma mark - ReplyVerifys
+
+typedef GPB_ENUM(ReplyVerifys_FieldNumber) {
+  ReplyVerifys_FieldNumber_VerifysArray = 1,
+};
+
+GPB_FINAL @interface ReplyVerifys : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ReplyVerify*> *verifysArray;
+/** The number of items in @c verifysArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger verifysArray_Count;
+
+@end
+
+#pragma mark - ReplyVerify
+
+typedef GPB_ENUM(ReplyVerify_FieldNumber) {
+  ReplyVerify_FieldNumber_Height = 1,
+  ReplyVerify_FieldNumber_BlockHash = 2,
+  ReplyVerify_FieldNumber_Hash_p = 3,
+  ReplyVerify_FieldNumber_Time = 4,
+  ReplyVerify_FieldNumber_Nonce = 5,
+  ReplyVerify_FieldNumber_Miner = 6,
+};
+
+GPB_FINAL @interface ReplyVerify : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *height;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *blockHash;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *hash_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *time;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *nonce;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *miner;
 
 @end
 

@@ -18,14 +18,16 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GreeterClient interface {
-	BlockHeight(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyBlock, error)
-	Latest(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyLatest, error)
-	CheckBroken(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyBool, error)
-	AddressValue(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyValue, error)
-	AddressBalance(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyBalance, error)
+	GetBlockHeight(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyBlock, error)
+	GetLatest(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyLatest, error)
+	GetBroken(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyBool, error)
+	GetAddressValue(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyValue, error)
+	GetAddressBalance(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyBalance, error)
 	GetTransaction(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyTransaction, error)
-	Verify(ctx context.Context, in *VerifyRequest, opts ...grpc.CallOption) (*ReplyBool, error)
-	Transaction(ctx context.Context, in *TransactionRequest, opts ...grpc.CallOption) (*ReplyBool, error)
+	PutVerify(ctx context.Context, in *VerifyRequest, opts ...grpc.CallOption) (*ReplyBool, error)
+	PutTransaction(ctx context.Context, in *TransactionRequest, opts ...grpc.CallOption) (*ReplyBool, error)
+	GetVerifyHeight(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyVerifys, error)
+	HasTransaction(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyBool, error)
 }
 
 type greeterClient struct {
@@ -36,45 +38,45 @@ func NewGreeterClient(cc grpc.ClientConnInterface) GreeterClient {
 	return &greeterClient{cc}
 }
 
-func (c *greeterClient) BlockHeight(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyBlock, error) {
+func (c *greeterClient) GetBlockHeight(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyBlock, error) {
 	out := new(ReplyBlock)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/BlockHeight", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/GetBlockHeight", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) Latest(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyLatest, error) {
+func (c *greeterClient) GetLatest(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyLatest, error) {
 	out := new(ReplyLatest)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/Latest", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/GetLatest", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) CheckBroken(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
+func (c *greeterClient) GetBroken(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
 	out := new(ReplyBool)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/CheckBroken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/GetBroken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) AddressValue(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyValue, error) {
+func (c *greeterClient) GetAddressValue(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyValue, error) {
 	out := new(ReplyValue)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/AddressValue", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/GetAddressValue", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) AddressBalance(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyBalance, error) {
+func (c *greeterClient) GetAddressBalance(ctx context.Context, in *AddressRequest, opts ...grpc.CallOption) (*ReplyBalance, error) {
 	out := new(ReplyBalance)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/AddressBalance", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/GetAddressBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,18 +92,36 @@ func (c *greeterClient) GetTransaction(ctx context.Context, in *HashRequest, opt
 	return out, nil
 }
 
-func (c *greeterClient) Verify(ctx context.Context, in *VerifyRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
+func (c *greeterClient) PutVerify(ctx context.Context, in *VerifyRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
 	out := new(ReplyBool)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/Verify", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/PutVerify", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) Transaction(ctx context.Context, in *TransactionRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
+func (c *greeterClient) PutTransaction(ctx context.Context, in *TransactionRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
 	out := new(ReplyBool)
-	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/Transaction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/PutTransaction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) GetVerifyHeight(ctx context.Context, in *HeightRequest, opts ...grpc.CallOption) (*ReplyVerifys, error) {
+	out := new(ReplyVerifys)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/GetVerifyHeight", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) HasTransaction(ctx context.Context, in *HashRequest, opts ...grpc.CallOption) (*ReplyBool, error) {
+	out := new(ReplyBool)
+	err := c.cc.Invoke(ctx, "/KotFlowBlock.Greeter/HasTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,14 +132,16 @@ func (c *greeterClient) Transaction(ctx context.Context, in *TransactionRequest,
 // All implementations must embed UnimplementedGreeterServer
 // for forward compatibility
 type GreeterServer interface {
-	BlockHeight(context.Context, *HeightRequest) (*ReplyBlock, error)
-	Latest(context.Context, *HeightRequest) (*ReplyLatest, error)
-	CheckBroken(context.Context, *HashRequest) (*ReplyBool, error)
-	AddressValue(context.Context, *AddressRequest) (*ReplyValue, error)
-	AddressBalance(context.Context, *AddressRequest) (*ReplyBalance, error)
+	GetBlockHeight(context.Context, *HeightRequest) (*ReplyBlock, error)
+	GetLatest(context.Context, *HeightRequest) (*ReplyLatest, error)
+	GetBroken(context.Context, *HashRequest) (*ReplyBool, error)
+	GetAddressValue(context.Context, *AddressRequest) (*ReplyValue, error)
+	GetAddressBalance(context.Context, *AddressRequest) (*ReplyBalance, error)
 	GetTransaction(context.Context, *HashRequest) (*ReplyTransaction, error)
-	Verify(context.Context, *VerifyRequest) (*ReplyBool, error)
-	Transaction(context.Context, *TransactionRequest) (*ReplyBool, error)
+	PutVerify(context.Context, *VerifyRequest) (*ReplyBool, error)
+	PutTransaction(context.Context, *TransactionRequest) (*ReplyBool, error)
+	GetVerifyHeight(context.Context, *HeightRequest) (*ReplyVerifys, error)
+	HasTransaction(context.Context, *HashRequest) (*ReplyBool, error)
 	mustEmbedUnimplementedGreeterServer()
 }
 
@@ -127,29 +149,35 @@ type GreeterServer interface {
 type UnimplementedGreeterServer struct {
 }
 
-func (UnimplementedGreeterServer) BlockHeight(context.Context, *HeightRequest) (*ReplyBlock, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BlockHeight not implemented")
+func (UnimplementedGreeterServer) GetBlockHeight(context.Context, *HeightRequest) (*ReplyBlock, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBlockHeight not implemented")
 }
-func (UnimplementedGreeterServer) Latest(context.Context, *HeightRequest) (*ReplyLatest, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Latest not implemented")
+func (UnimplementedGreeterServer) GetLatest(context.Context, *HeightRequest) (*ReplyLatest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLatest not implemented")
 }
-func (UnimplementedGreeterServer) CheckBroken(context.Context, *HashRequest) (*ReplyBool, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CheckBroken not implemented")
+func (UnimplementedGreeterServer) GetBroken(context.Context, *HashRequest) (*ReplyBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBroken not implemented")
 }
-func (UnimplementedGreeterServer) AddressValue(context.Context, *AddressRequest) (*ReplyValue, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddressValue not implemented")
+func (UnimplementedGreeterServer) GetAddressValue(context.Context, *AddressRequest) (*ReplyValue, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAddressValue not implemented")
 }
-func (UnimplementedGreeterServer) AddressBalance(context.Context, *AddressRequest) (*ReplyBalance, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddressBalance not implemented")
+func (UnimplementedGreeterServer) GetAddressBalance(context.Context, *AddressRequest) (*ReplyBalance, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAddressBalance not implemented")
 }
 func (UnimplementedGreeterServer) GetTransaction(context.Context, *HashRequest) (*ReplyTransaction, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
 }
-func (UnimplementedGreeterServer) Verify(context.Context, *VerifyRequest) (*ReplyBool, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Verify not implemented")
+func (UnimplementedGreeterServer) PutVerify(context.Context, *VerifyRequest) (*ReplyBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PutVerify not implemented")
 }
-func (UnimplementedGreeterServer) Transaction(context.Context, *TransactionRequest) (*ReplyBool, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Transaction not implemented")
+func (UnimplementedGreeterServer) PutTransaction(context.Context, *TransactionRequest) (*ReplyBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PutTransaction not implemented")
+}
+func (UnimplementedGreeterServer) GetVerifyHeight(context.Context, *HeightRequest) (*ReplyVerifys, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetVerifyHeight not implemented")
+}
+func (UnimplementedGreeterServer) HasTransaction(context.Context, *HashRequest) (*ReplyBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HasTransaction not implemented")
 }
 func (UnimplementedGreeterServer) mustEmbedUnimplementedGreeterServer() {}
 
@@ -164,92 +192,92 @@ func RegisterGreeterServer(s grpc.ServiceRegistrar, srv GreeterServer) {
 	s.RegisterService(&Greeter_ServiceDesc, srv)
 }
 
-func _Greeter_BlockHeight_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_GetBlockHeight_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeightRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).BlockHeight(ctx, in)
+		return srv.(GreeterServer).GetBlockHeight(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/BlockHeight",
+		FullMethod: "/KotFlowBlock.Greeter/GetBlockHeight",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).BlockHeight(ctx, req.(*HeightRequest))
+		return srv.(GreeterServer).GetBlockHeight(ctx, req.(*HeightRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_Latest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_GetLatest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeightRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).Latest(ctx, in)
+		return srv.(GreeterServer).GetLatest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/Latest",
+		FullMethod: "/KotFlowBlock.Greeter/GetLatest",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).Latest(ctx, req.(*HeightRequest))
+		return srv.(GreeterServer).GetLatest(ctx, req.(*HeightRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_CheckBroken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_GetBroken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HashRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).CheckBroken(ctx, in)
+		return srv.(GreeterServer).GetBroken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/CheckBroken",
+		FullMethod: "/KotFlowBlock.Greeter/GetBroken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).CheckBroken(ctx, req.(*HashRequest))
+		return srv.(GreeterServer).GetBroken(ctx, req.(*HashRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_AddressValue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_GetAddressValue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddressRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).AddressValue(ctx, in)
+		return srv.(GreeterServer).GetAddressValue(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/AddressValue",
+		FullMethod: "/KotFlowBlock.Greeter/GetAddressValue",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).AddressValue(ctx, req.(*AddressRequest))
+		return srv.(GreeterServer).GetAddressValue(ctx, req.(*AddressRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_AddressBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_GetAddressBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddressRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).AddressBalance(ctx, in)
+		return srv.(GreeterServer).GetAddressBalance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/AddressBalance",
+		FullMethod: "/KotFlowBlock.Greeter/GetAddressBalance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).AddressBalance(ctx, req.(*AddressRequest))
+		return srv.(GreeterServer).GetAddressBalance(ctx, req.(*AddressRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -272,38 +300,74 @@ func _Greeter_GetTransaction_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_Verify_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_PutVerify_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(VerifyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).Verify(ctx, in)
+		return srv.(GreeterServer).PutVerify(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/Verify",
+		FullMethod: "/KotFlowBlock.Greeter/PutVerify",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).Verify(ctx, req.(*VerifyRequest))
+		return srv.(GreeterServer).PutVerify(ctx, req.(*VerifyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_Transaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Greeter_PutTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TransactionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).Transaction(ctx, in)
+		return srv.(GreeterServer).PutTransaction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/KotFlowBlock.Greeter/Transaction",
+		FullMethod: "/KotFlowBlock.Greeter/PutTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).Transaction(ctx, req.(*TransactionRequest))
+		return srv.(GreeterServer).PutTransaction(ctx, req.(*TransactionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_GetVerifyHeight_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HeightRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).GetVerifyHeight(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/KotFlowBlock.Greeter/GetVerifyHeight",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).GetVerifyHeight(ctx, req.(*HeightRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_HasTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HashRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).HasTransaction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/KotFlowBlock.Greeter/HasTransaction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).HasTransaction(ctx, req.(*HashRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -316,36 +380,44 @@ var Greeter_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GreeterServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "BlockHeight",
-			Handler:    _Greeter_BlockHeight_Handler,
+			MethodName: "GetBlockHeight",
+			Handler:    _Greeter_GetBlockHeight_Handler,
 		},
 		{
-			MethodName: "Latest",
-			Handler:    _Greeter_Latest_Handler,
+			MethodName: "GetLatest",
+			Handler:    _Greeter_GetLatest_Handler,
 		},
 		{
-			MethodName: "CheckBroken",
-			Handler:    _Greeter_CheckBroken_Handler,
+			MethodName: "GetBroken",
+			Handler:    _Greeter_GetBroken_Handler,
 		},
 		{
-			MethodName: "AddressValue",
-			Handler:    _Greeter_AddressValue_Handler,
+			MethodName: "GetAddressValue",
+			Handler:    _Greeter_GetAddressValue_Handler,
 		},
 		{
-			MethodName: "AddressBalance",
-			Handler:    _Greeter_AddressBalance_Handler,
+			MethodName: "GetAddressBalance",
+			Handler:    _Greeter_GetAddressBalance_Handler,
 		},
 		{
 			MethodName: "GetTransaction",
 			Handler:    _Greeter_GetTransaction_Handler,
 		},
 		{
-			MethodName: "Verify",
-			Handler:    _Greeter_Verify_Handler,
+			MethodName: "PutVerify",
+			Handler:    _Greeter_PutVerify_Handler,
 		},
 		{
-			MethodName: "Transaction",
-			Handler:    _Greeter_Transaction_Handler,
+			MethodName: "PutTransaction",
+			Handler:    _Greeter_PutTransaction_Handler,
+		},
+		{
+			MethodName: "GetVerifyHeight",
+			Handler:    _Greeter_GetVerifyHeight_Handler,
+		},
+		{
+			MethodName: "HasTransaction",
+			Handler:    _Greeter_HasTransaction_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

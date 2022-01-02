@@ -69,6 +69,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :Sign, :bytes, 8
       optional :State, :bool, 9
     end
+    add_message "KotFlowBlock.ReplyVerifys" do
+      repeated :Verifys, :message, 1, "KotFlowBlock.ReplyVerify"
+    end
+    add_message "KotFlowBlock.ReplyVerify" do
+      optional :Height, :bytes, 1
+      optional :BlockHash, :bytes, 2
+      optional :Hash, :bytes, 3
+      optional :Time, :bytes, 4
+      optional :Nonce, :bytes, 5
+      optional :Miner, :bytes, 6
+    end
   end
 end
 
@@ -85,4 +96,6 @@ module KotFlowBlock
   ReplyLatest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyLatest").msgclass
   Header = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.Header").msgclass
   ReplyTransaction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyTransaction").msgclass
+  ReplyVerifys = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyVerifys").msgclass
+  ReplyVerify = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("KotFlowBlock.ReplyVerify").msgclass
 end

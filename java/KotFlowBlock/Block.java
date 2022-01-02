@@ -8411,6 +8411,1661 @@ public final class Block {
 
   }
 
+  public interface ReplyVerifysOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:KotFlowBlock.ReplyVerifys)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    java.util.List<KotFlowBlock.Block.ReplyVerify> 
+        getVerifysList();
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    KotFlowBlock.Block.ReplyVerify getVerifys(int index);
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    int getVerifysCount();
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    java.util.List<? extends KotFlowBlock.Block.ReplyVerifyOrBuilder> 
+        getVerifysOrBuilderList();
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    KotFlowBlock.Block.ReplyVerifyOrBuilder getVerifysOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code KotFlowBlock.ReplyVerifys}
+   */
+  public static final class ReplyVerifys extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:KotFlowBlock.ReplyVerifys)
+      ReplyVerifysOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReplyVerifys.newBuilder() to construct.
+    private ReplyVerifys(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReplyVerifys() {
+      verifys_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReplyVerifys();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReplyVerifys(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                verifys_ = new java.util.ArrayList<KotFlowBlock.Block.ReplyVerify>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              verifys_.add(
+                  input.readMessage(KotFlowBlock.Block.ReplyVerify.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          verifys_ = java.util.Collections.unmodifiableList(verifys_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerifys_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerifys_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              KotFlowBlock.Block.ReplyVerifys.class, KotFlowBlock.Block.ReplyVerifys.Builder.class);
+    }
+
+    public static final int VERIFYS_FIELD_NUMBER = 1;
+    private java.util.List<KotFlowBlock.Block.ReplyVerify> verifys_;
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<KotFlowBlock.Block.ReplyVerify> getVerifysList() {
+      return verifys_;
+    }
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends KotFlowBlock.Block.ReplyVerifyOrBuilder> 
+        getVerifysOrBuilderList() {
+      return verifys_;
+    }
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    @java.lang.Override
+    public int getVerifysCount() {
+      return verifys_.size();
+    }
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    @java.lang.Override
+    public KotFlowBlock.Block.ReplyVerify getVerifys(int index) {
+      return verifys_.get(index);
+    }
+    /**
+     * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+     */
+    @java.lang.Override
+    public KotFlowBlock.Block.ReplyVerifyOrBuilder getVerifysOrBuilder(
+        int index) {
+      return verifys_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < verifys_.size(); i++) {
+        output.writeMessage(1, verifys_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < verifys_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, verifys_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof KotFlowBlock.Block.ReplyVerifys)) {
+        return super.equals(obj);
+      }
+      KotFlowBlock.Block.ReplyVerifys other = (KotFlowBlock.Block.ReplyVerifys) obj;
+
+      if (!getVerifysList()
+          .equals(other.getVerifysList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getVerifysCount() > 0) {
+        hash = (37 * hash) + VERIFYS_FIELD_NUMBER;
+        hash = (53 * hash) + getVerifysList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static KotFlowBlock.Block.ReplyVerifys parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(KotFlowBlock.Block.ReplyVerifys prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code KotFlowBlock.ReplyVerifys}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:KotFlowBlock.ReplyVerifys)
+        KotFlowBlock.Block.ReplyVerifysOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerifys_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerifys_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                KotFlowBlock.Block.ReplyVerifys.class, KotFlowBlock.Block.ReplyVerifys.Builder.class);
+      }
+
+      // Construct using KotFlowBlock.Block.ReplyVerifys.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getVerifysFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (verifysBuilder_ == null) {
+          verifys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          verifysBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerifys_descriptor;
+      }
+
+      @java.lang.Override
+      public KotFlowBlock.Block.ReplyVerifys getDefaultInstanceForType() {
+        return KotFlowBlock.Block.ReplyVerifys.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public KotFlowBlock.Block.ReplyVerifys build() {
+        KotFlowBlock.Block.ReplyVerifys result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public KotFlowBlock.Block.ReplyVerifys buildPartial() {
+        KotFlowBlock.Block.ReplyVerifys result = new KotFlowBlock.Block.ReplyVerifys(this);
+        int from_bitField0_ = bitField0_;
+        if (verifysBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            verifys_ = java.util.Collections.unmodifiableList(verifys_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.verifys_ = verifys_;
+        } else {
+          result.verifys_ = verifysBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof KotFlowBlock.Block.ReplyVerifys) {
+          return mergeFrom((KotFlowBlock.Block.ReplyVerifys)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(KotFlowBlock.Block.ReplyVerifys other) {
+        if (other == KotFlowBlock.Block.ReplyVerifys.getDefaultInstance()) return this;
+        if (verifysBuilder_ == null) {
+          if (!other.verifys_.isEmpty()) {
+            if (verifys_.isEmpty()) {
+              verifys_ = other.verifys_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureVerifysIsMutable();
+              verifys_.addAll(other.verifys_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.verifys_.isEmpty()) {
+            if (verifysBuilder_.isEmpty()) {
+              verifysBuilder_.dispose();
+              verifysBuilder_ = null;
+              verifys_ = other.verifys_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              verifysBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getVerifysFieldBuilder() : null;
+            } else {
+              verifysBuilder_.addAllMessages(other.verifys_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        KotFlowBlock.Block.ReplyVerifys parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (KotFlowBlock.Block.ReplyVerifys) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<KotFlowBlock.Block.ReplyVerify> verifys_ =
+        java.util.Collections.emptyList();
+      private void ensureVerifysIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          verifys_ = new java.util.ArrayList<KotFlowBlock.Block.ReplyVerify>(verifys_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          KotFlowBlock.Block.ReplyVerify, KotFlowBlock.Block.ReplyVerify.Builder, KotFlowBlock.Block.ReplyVerifyOrBuilder> verifysBuilder_;
+
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public java.util.List<KotFlowBlock.Block.ReplyVerify> getVerifysList() {
+        if (verifysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(verifys_);
+        } else {
+          return verifysBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public int getVerifysCount() {
+        if (verifysBuilder_ == null) {
+          return verifys_.size();
+        } else {
+          return verifysBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public KotFlowBlock.Block.ReplyVerify getVerifys(int index) {
+        if (verifysBuilder_ == null) {
+          return verifys_.get(index);
+        } else {
+          return verifysBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder setVerifys(
+          int index, KotFlowBlock.Block.ReplyVerify value) {
+        if (verifysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVerifysIsMutable();
+          verifys_.set(index, value);
+          onChanged();
+        } else {
+          verifysBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder setVerifys(
+          int index, KotFlowBlock.Block.ReplyVerify.Builder builderForValue) {
+        if (verifysBuilder_ == null) {
+          ensureVerifysIsMutable();
+          verifys_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          verifysBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder addVerifys(KotFlowBlock.Block.ReplyVerify value) {
+        if (verifysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVerifysIsMutable();
+          verifys_.add(value);
+          onChanged();
+        } else {
+          verifysBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder addVerifys(
+          int index, KotFlowBlock.Block.ReplyVerify value) {
+        if (verifysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVerifysIsMutable();
+          verifys_.add(index, value);
+          onChanged();
+        } else {
+          verifysBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder addVerifys(
+          KotFlowBlock.Block.ReplyVerify.Builder builderForValue) {
+        if (verifysBuilder_ == null) {
+          ensureVerifysIsMutable();
+          verifys_.add(builderForValue.build());
+          onChanged();
+        } else {
+          verifysBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder addVerifys(
+          int index, KotFlowBlock.Block.ReplyVerify.Builder builderForValue) {
+        if (verifysBuilder_ == null) {
+          ensureVerifysIsMutable();
+          verifys_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          verifysBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder addAllVerifys(
+          java.lang.Iterable<? extends KotFlowBlock.Block.ReplyVerify> values) {
+        if (verifysBuilder_ == null) {
+          ensureVerifysIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, verifys_);
+          onChanged();
+        } else {
+          verifysBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder clearVerifys() {
+        if (verifysBuilder_ == null) {
+          verifys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          verifysBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public Builder removeVerifys(int index) {
+        if (verifysBuilder_ == null) {
+          ensureVerifysIsMutable();
+          verifys_.remove(index);
+          onChanged();
+        } else {
+          verifysBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public KotFlowBlock.Block.ReplyVerify.Builder getVerifysBuilder(
+          int index) {
+        return getVerifysFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public KotFlowBlock.Block.ReplyVerifyOrBuilder getVerifysOrBuilder(
+          int index) {
+        if (verifysBuilder_ == null) {
+          return verifys_.get(index);  } else {
+          return verifysBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public java.util.List<? extends KotFlowBlock.Block.ReplyVerifyOrBuilder> 
+           getVerifysOrBuilderList() {
+        if (verifysBuilder_ != null) {
+          return verifysBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(verifys_);
+        }
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public KotFlowBlock.Block.ReplyVerify.Builder addVerifysBuilder() {
+        return getVerifysFieldBuilder().addBuilder(
+            KotFlowBlock.Block.ReplyVerify.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public KotFlowBlock.Block.ReplyVerify.Builder addVerifysBuilder(
+          int index) {
+        return getVerifysFieldBuilder().addBuilder(
+            index, KotFlowBlock.Block.ReplyVerify.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .KotFlowBlock.ReplyVerify Verifys = 1;</code>
+       */
+      public java.util.List<KotFlowBlock.Block.ReplyVerify.Builder> 
+           getVerifysBuilderList() {
+        return getVerifysFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          KotFlowBlock.Block.ReplyVerify, KotFlowBlock.Block.ReplyVerify.Builder, KotFlowBlock.Block.ReplyVerifyOrBuilder> 
+          getVerifysFieldBuilder() {
+        if (verifysBuilder_ == null) {
+          verifysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              KotFlowBlock.Block.ReplyVerify, KotFlowBlock.Block.ReplyVerify.Builder, KotFlowBlock.Block.ReplyVerifyOrBuilder>(
+                  verifys_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          verifys_ = null;
+        }
+        return verifysBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:KotFlowBlock.ReplyVerifys)
+    }
+
+    // @@protoc_insertion_point(class_scope:KotFlowBlock.ReplyVerifys)
+    private static final KotFlowBlock.Block.ReplyVerifys DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new KotFlowBlock.Block.ReplyVerifys();
+    }
+
+    public static KotFlowBlock.Block.ReplyVerifys getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReplyVerifys>
+        PARSER = new com.google.protobuf.AbstractParser<ReplyVerifys>() {
+      @java.lang.Override
+      public ReplyVerifys parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReplyVerifys(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReplyVerifys> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReplyVerifys> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public KotFlowBlock.Block.ReplyVerifys getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReplyVerifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:KotFlowBlock.ReplyVerify)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes Height = 1;</code>
+     * @return The height.
+     */
+    com.google.protobuf.ByteString getHeight();
+
+    /**
+     * <code>bytes BlockHash = 2;</code>
+     * @return The blockHash.
+     */
+    com.google.protobuf.ByteString getBlockHash();
+
+    /**
+     * <code>bytes Hash = 3;</code>
+     * @return The hash.
+     */
+    com.google.protobuf.ByteString getHash();
+
+    /**
+     * <code>bytes Time = 4;</code>
+     * @return The time.
+     */
+    com.google.protobuf.ByteString getTime();
+
+    /**
+     * <code>bytes Nonce = 5;</code>
+     * @return The nonce.
+     */
+    com.google.protobuf.ByteString getNonce();
+
+    /**
+     * <code>bytes Miner = 6;</code>
+     * @return The miner.
+     */
+    com.google.protobuf.ByteString getMiner();
+  }
+  /**
+   * Protobuf type {@code KotFlowBlock.ReplyVerify}
+   */
+  public static final class ReplyVerify extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:KotFlowBlock.ReplyVerify)
+      ReplyVerifyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReplyVerify.newBuilder() to construct.
+    private ReplyVerify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReplyVerify() {
+      height_ = com.google.protobuf.ByteString.EMPTY;
+      blockHash_ = com.google.protobuf.ByteString.EMPTY;
+      hash_ = com.google.protobuf.ByteString.EMPTY;
+      time_ = com.google.protobuf.ByteString.EMPTY;
+      nonce_ = com.google.protobuf.ByteString.EMPTY;
+      miner_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReplyVerify();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReplyVerify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              height_ = input.readBytes();
+              break;
+            }
+            case 18: {
+
+              blockHash_ = input.readBytes();
+              break;
+            }
+            case 26: {
+
+              hash_ = input.readBytes();
+              break;
+            }
+            case 34: {
+
+              time_ = input.readBytes();
+              break;
+            }
+            case 42: {
+
+              nonce_ = input.readBytes();
+              break;
+            }
+            case 50: {
+
+              miner_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerify_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerify_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              KotFlowBlock.Block.ReplyVerify.class, KotFlowBlock.Block.ReplyVerify.Builder.class);
+    }
+
+    public static final int HEIGHT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString height_;
+    /**
+     * <code>bytes Height = 1;</code>
+     * @return The height.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHeight() {
+      return height_;
+    }
+
+    public static final int BLOCKHASH_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString blockHash_;
+    /**
+     * <code>bytes BlockHash = 2;</code>
+     * @return The blockHash.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBlockHash() {
+      return blockHash_;
+    }
+
+    public static final int HASH_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString hash_;
+    /**
+     * <code>bytes Hash = 3;</code>
+     * @return The hash.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHash() {
+      return hash_;
+    }
+
+    public static final int TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString time_;
+    /**
+     * <code>bytes Time = 4;</code>
+     * @return The time.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTime() {
+      return time_;
+    }
+
+    public static final int NONCE_FIELD_NUMBER = 5;
+    private com.google.protobuf.ByteString nonce_;
+    /**
+     * <code>bytes Nonce = 5;</code>
+     * @return The nonce.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNonce() {
+      return nonce_;
+    }
+
+    public static final int MINER_FIELD_NUMBER = 6;
+    private com.google.protobuf.ByteString miner_;
+    /**
+     * <code>bytes Miner = 6;</code>
+     * @return The miner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMiner() {
+      return miner_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!height_.isEmpty()) {
+        output.writeBytes(1, height_);
+      }
+      if (!blockHash_.isEmpty()) {
+        output.writeBytes(2, blockHash_);
+      }
+      if (!hash_.isEmpty()) {
+        output.writeBytes(3, hash_);
+      }
+      if (!time_.isEmpty()) {
+        output.writeBytes(4, time_);
+      }
+      if (!nonce_.isEmpty()) {
+        output.writeBytes(5, nonce_);
+      }
+      if (!miner_.isEmpty()) {
+        output.writeBytes(6, miner_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!height_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, height_);
+      }
+      if (!blockHash_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, blockHash_);
+      }
+      if (!hash_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, hash_);
+      }
+      if (!time_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, time_);
+      }
+      if (!nonce_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, nonce_);
+      }
+      if (!miner_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, miner_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof KotFlowBlock.Block.ReplyVerify)) {
+        return super.equals(obj);
+      }
+      KotFlowBlock.Block.ReplyVerify other = (KotFlowBlock.Block.ReplyVerify) obj;
+
+      if (!getHeight()
+          .equals(other.getHeight())) return false;
+      if (!getBlockHash()
+          .equals(other.getBlockHash())) return false;
+      if (!getHash()
+          .equals(other.getHash())) return false;
+      if (!getTime()
+          .equals(other.getTime())) return false;
+      if (!getNonce()
+          .equals(other.getNonce())) return false;
+      if (!getMiner()
+          .equals(other.getMiner())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + getHeight().hashCode();
+      hash = (37 * hash) + BLOCKHASH_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockHash().hashCode();
+      hash = (37 * hash) + HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getHash().hashCode();
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTime().hashCode();
+      hash = (37 * hash) + NONCE_FIELD_NUMBER;
+      hash = (53 * hash) + getNonce().hashCode();
+      hash = (37 * hash) + MINER_FIELD_NUMBER;
+      hash = (53 * hash) + getMiner().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static KotFlowBlock.Block.ReplyVerify parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(KotFlowBlock.Block.ReplyVerify prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code KotFlowBlock.ReplyVerify}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:KotFlowBlock.ReplyVerify)
+        KotFlowBlock.Block.ReplyVerifyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerify_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerify_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                KotFlowBlock.Block.ReplyVerify.class, KotFlowBlock.Block.ReplyVerify.Builder.class);
+      }
+
+      // Construct using KotFlowBlock.Block.ReplyVerify.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        height_ = com.google.protobuf.ByteString.EMPTY;
+
+        blockHash_ = com.google.protobuf.ByteString.EMPTY;
+
+        hash_ = com.google.protobuf.ByteString.EMPTY;
+
+        time_ = com.google.protobuf.ByteString.EMPTY;
+
+        nonce_ = com.google.protobuf.ByteString.EMPTY;
+
+        miner_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return KotFlowBlock.Block.internal_static_KotFlowBlock_ReplyVerify_descriptor;
+      }
+
+      @java.lang.Override
+      public KotFlowBlock.Block.ReplyVerify getDefaultInstanceForType() {
+        return KotFlowBlock.Block.ReplyVerify.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public KotFlowBlock.Block.ReplyVerify build() {
+        KotFlowBlock.Block.ReplyVerify result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public KotFlowBlock.Block.ReplyVerify buildPartial() {
+        KotFlowBlock.Block.ReplyVerify result = new KotFlowBlock.Block.ReplyVerify(this);
+        result.height_ = height_;
+        result.blockHash_ = blockHash_;
+        result.hash_ = hash_;
+        result.time_ = time_;
+        result.nonce_ = nonce_;
+        result.miner_ = miner_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof KotFlowBlock.Block.ReplyVerify) {
+          return mergeFrom((KotFlowBlock.Block.ReplyVerify)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(KotFlowBlock.Block.ReplyVerify other) {
+        if (other == KotFlowBlock.Block.ReplyVerify.getDefaultInstance()) return this;
+        if (other.getHeight() != com.google.protobuf.ByteString.EMPTY) {
+          setHeight(other.getHeight());
+        }
+        if (other.getBlockHash() != com.google.protobuf.ByteString.EMPTY) {
+          setBlockHash(other.getBlockHash());
+        }
+        if (other.getHash() != com.google.protobuf.ByteString.EMPTY) {
+          setHash(other.getHash());
+        }
+        if (other.getTime() != com.google.protobuf.ByteString.EMPTY) {
+          setTime(other.getTime());
+        }
+        if (other.getNonce() != com.google.protobuf.ByteString.EMPTY) {
+          setNonce(other.getNonce());
+        }
+        if (other.getMiner() != com.google.protobuf.ByteString.EMPTY) {
+          setMiner(other.getMiner());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        KotFlowBlock.Block.ReplyVerify parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (KotFlowBlock.Block.ReplyVerify) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString height_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes Height = 1;</code>
+       * @return The height.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getHeight() {
+        return height_;
+      }
+      /**
+       * <code>bytes Height = 1;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeight(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        height_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes Height = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeight() {
+        
+        height_ = getDefaultInstance().getHeight();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString blockHash_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes BlockHash = 2;</code>
+       * @return The blockHash.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getBlockHash() {
+        return blockHash_;
+      }
+      /**
+       * <code>bytes BlockHash = 2;</code>
+       * @param value The blockHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockHash(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        blockHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes BlockHash = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBlockHash() {
+        
+        blockHash_ = getDefaultInstance().getBlockHash();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes Hash = 3;</code>
+       * @return The hash.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getHash() {
+        return hash_;
+      }
+      /**
+       * <code>bytes Hash = 3;</code>
+       * @param value The hash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHash(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes Hash = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHash() {
+        
+        hash_ = getDefaultInstance().getHash();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString time_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes Time = 4;</code>
+       * @return The time.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTime() {
+        return time_;
+      }
+      /**
+       * <code>bytes Time = 4;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTime(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes Time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTime() {
+        
+        time_ = getDefaultInstance().getTime();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString nonce_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes Nonce = 5;</code>
+       * @return The nonce.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getNonce() {
+        return nonce_;
+      }
+      /**
+       * <code>bytes Nonce = 5;</code>
+       * @param value The nonce to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNonce(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nonce_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes Nonce = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNonce() {
+        
+        nonce_ = getDefaultInstance().getNonce();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString miner_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes Miner = 6;</code>
+       * @return The miner.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getMiner() {
+        return miner_;
+      }
+      /**
+       * <code>bytes Miner = 6;</code>
+       * @param value The miner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMiner(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        miner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes Miner = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMiner() {
+        
+        miner_ = getDefaultInstance().getMiner();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:KotFlowBlock.ReplyVerify)
+    }
+
+    // @@protoc_insertion_point(class_scope:KotFlowBlock.ReplyVerify)
+    private static final KotFlowBlock.Block.ReplyVerify DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new KotFlowBlock.Block.ReplyVerify();
+    }
+
+    public static KotFlowBlock.Block.ReplyVerify getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReplyVerify>
+        PARSER = new com.google.protobuf.AbstractParser<ReplyVerify>() {
+      @java.lang.Override
+      public ReplyVerify parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReplyVerify(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReplyVerify> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReplyVerify> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public KotFlowBlock.Block.ReplyVerify getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_KotFlowBlock_VerifyRequest_descriptor;
   private static final 
@@ -8471,6 +10126,16 @@ public final class Block {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_KotFlowBlock_ReplyTransaction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_KotFlowBlock_ReplyVerifys_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_KotFlowBlock_ReplyVerifys_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_KotFlowBlock_ReplyVerify_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_KotFlowBlock_ReplyVerify_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8502,22 +10167,30 @@ public final class Block {
       "e\030\001 \001(\014\022\017\n\007BaseFee\030\002 \001(\014\022\n\n\002To\030\003 \001(\014\022\016\n\006" +
       "Random\030\004 \001(\014\022\016\n\006TxHash\030\005 \001(\014\022\014\n\004Time\030\006 \001" +
       "(\014\022\r\n\005Nonce\030\007 \001(\014\022\014\n\004Sign\030\010 \001(\014\022\r\n\005State" +
-      "\030\t \001(\0102\317\004\n\007Greeter\022F\n\013BlockHeight\022\033.KotF" +
-      "lowBlock.HeightRequest\032\030.KotFlowBlock.Re" +
-      "plyBlock\"\000\022B\n\006Latest\022\033.KotFlowBlock.Heig" +
-      "htRequest\032\031.KotFlowBlock.ReplyLatest\"\000\022C" +
-      "\n\013CheckBroken\022\031.KotFlowBlock.HashRequest" +
-      "\032\027.KotFlowBlock.ReplyBool\"\000\022H\n\014AddressVa" +
-      "lue\022\034.KotFlowBlock.AddressRequest\032\030.KotF" +
-      "lowBlock.ReplyValue\"\000\022L\n\016AddressBalance\022" +
-      "\034.KotFlowBlock.AddressRequest\032\032.KotFlowB" +
-      "lock.ReplyBalance\"\000\022M\n\016GetTransaction\022\031." +
-      "KotFlowBlock.HashRequest\032\036.KotFlowBlock." +
-      "ReplyTransaction\"\000\022@\n\006Verify\022\033.KotFlowBl" +
-      "ock.VerifyRequest\032\027.KotFlowBlock.ReplyBo" +
-      "ol\"\000\022J\n\013Transaction\022 .KotFlowBlock.Trans" +
-      "actionRequest\032\027.KotFlowBlock.ReplyBool\"\000" +
-      "B\014Z\ngolang/kotb\006proto3"
+      "\030\t \001(\010\":\n\014ReplyVerifys\022*\n\007Verifys\030\001 \003(\0132" +
+      "\031.KotFlowBlock.ReplyVerify\"j\n\013ReplyVerif" +
+      "y\022\016\n\006Height\030\001 \001(\014\022\021\n\tBlockHash\030\002 \001(\014\022\014\n\004" +
+      "Hash\030\003 \001(\014\022\014\n\004Time\030\004 \001(\014\022\r\n\005Nonce\030\005 \001(\014\022" +
+      "\r\n\005Miner\030\006 \001(\0142\365\005\n\007Greeter\022I\n\016GetBlockHe" +
+      "ight\022\033.KotFlowBlock.HeightRequest\032\030.KotF" +
+      "lowBlock.ReplyBlock\"\000\022E\n\tGetLatest\022\033.Kot" +
+      "FlowBlock.HeightRequest\032\031.KotFlowBlock.R" +
+      "eplyLatest\"\000\022A\n\tGetBroken\022\031.KotFlowBlock" +
+      ".HashRequest\032\027.KotFlowBlock.ReplyBool\"\000\022" +
+      "K\n\017GetAddressValue\022\034.KotFlowBlock.Addres" +
+      "sRequest\032\030.KotFlowBlock.ReplyValue\"\000\022O\n\021" +
+      "GetAddressBalance\022\034.KotFlowBlock.Address" +
+      "Request\032\032.KotFlowBlock.ReplyBalance\"\000\022M\n" +
+      "\016GetTransaction\022\031.KotFlowBlock.HashReque" +
+      "st\032\036.KotFlowBlock.ReplyTransaction\"\000\022C\n\t" +
+      "PutVerify\022\033.KotFlowBlock.VerifyRequest\032\027" +
+      ".KotFlowBlock.ReplyBool\"\000\022M\n\016PutTransact" +
+      "ion\022 .KotFlowBlock.TransactionRequest\032\027." +
+      "KotFlowBlock.ReplyBool\"\000\022L\n\017GetVerifyHei" +
+      "ght\022\033.KotFlowBlock.HeightRequest\032\032.KotFl" +
+      "owBlock.ReplyVerifys\"\000\022F\n\016HasTransaction" +
+      "\022\031.KotFlowBlock.HashRequest\032\027.KotFlowBlo" +
+      "ck.ReplyBool\"\000B\014Z\ngolang/kotb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8595,6 +10268,18 @@ public final class Block {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KotFlowBlock_ReplyTransaction_descriptor,
         new java.lang.String[] { "Value", "BaseFee", "To", "Random", "TxHash", "Time", "Nonce", "Sign", "State", });
+    internal_static_KotFlowBlock_ReplyVerifys_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_KotFlowBlock_ReplyVerifys_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_KotFlowBlock_ReplyVerifys_descriptor,
+        new java.lang.String[] { "Verifys", });
+    internal_static_KotFlowBlock_ReplyVerify_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_KotFlowBlock_ReplyVerify_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_KotFlowBlock_ReplyVerify_descriptor,
+        new java.lang.String[] { "Height", "BlockHash", "Hash", "Time", "Nonce", "Miner", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
